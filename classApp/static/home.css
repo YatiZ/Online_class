@@ -1,0 +1,141 @@
+
+.main{
+    background-color: rgb(0, 136, 255);
+    display: inline-flex;
+    width: 100%;
+}
+.homeimg{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.text{
+    margin-top: 50px;
+    width: 50%;
+}
+.text h1,p{
+    margin-left: 80px;
+}
+.end{
+    background-color: rgb(5, 227, 5);
+    height: 100px;
+    
+}
+.end i{
+    font-size: 30px;
+    padding-top: 30px;
+    padding-left: 200px;
+    margin-left: 30px;
+}
+nav {
+    margin: 27px auto 0;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(5, 227, 5);
+    font-size: 0;
+    justify-content: space-around;
+}
+nav a{
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(8, 7, 7);
+    cursor: pointer;
+}
+nav .animation{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    
+}
+a:nth-child(1){
+    width: 100px;
+}
+a:nth-child(2){
+    width: 160px;
+}
+a:nth-child(3){
+    width: 150px;
+}
+a:nth-child(4){
+    width: 150px;
+}
+a:nth-child(5){
+    width: 170px;
+}
+/* a:nth-child(6){
+    width: 170px;
+} */
+nav .start-home,a:nth-child(1):hover~.animation{
+    width: 200px;
+    left: 0;
+    background-color: yellow;
+}
+nav .start-list,a:nth-child(2):hover~.animation{
+    width: 250px;
+    left: 220px;
+    background-color: white;
+}
+nav .start-profile,a:nth-child(3):hover~.animation{
+    width: 250px;
+    left: 485px;
+    background-color: yellow;
+}
+nav .start-add,a:nth-child(4):hover~.animation{
+    width: 250px;
+    left: 745px;
+    background-color: white;
+}
+nav .start-marks,a:nth-child(5):hover~.animation{
+    width: 280px;
+    left: 1005px;
+    background-color: yellow;
+}
+/* nav .start-exam,a:nth-child(6):hover~.animation{
+    width: 200px;
+    left: 1155px;
+    background-color: white;
+} */
+
+@media screen and (max-width:992px) {
+    .nav{
+        width: 100%;
+        line-height: 0%;
+        justify-content: center;
+        display: block;
+    }
+    .nav > a{
+        font-size: 10px;
+        width: 20%;
+        
+    }
+    .main{
+        font-size: 5px;
+        display: block;
+    }
+    .end{
+        width: 20%;
+        font-size: 10px;
+        display: inline;
+        height: 100%;
+    }
+    .end i{
+        font-size: 30px;
+        justify-content: space-between;
+        padding-left:12% ;
+        padding-top: 0;
+
+    }
+   
+}
+@media screen and (max-width:420px) {
+    
+}

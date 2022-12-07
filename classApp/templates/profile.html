@@ -1,0 +1,78 @@
+{% extends 'home.html' %} 
+{% block content %} 
+<style>
+    a:hover .flip-diagonal-2-tl {
+	-webkit-animation: flip-diagonal-2-tl 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-diagonal-2-tl 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes flip-diagonal-2-tl {
+  0% {
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+            transform: rotate3d(0, 1, 0, -180deg);
+  }
+}
+@keyframes flip-diagonal-2-tl {
+  0% {
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+            transform: rotate3d(0, 1, 0, -180deg);
+  }
+}
+thead{
+    background-color: rgba(255, 255, 0, 0.523);
+}
+.table_style{
+    width: 1200px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+</style>
+<a href="{% url 'home' %}">Back To Home</a>
+<a href="{% url 'export_pdf' %}">Export PDF</a>
+<div class="table_style">
+    <table class="table align-middle bg-white" height="200px" >
+    <thead >
+        <tr style="height: 60px;" class="align-middle">
+            <th></th>
+            <th>Name</th>
+            <th>Nickname</th>
+            <th>Roll</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+{% for i in data %} 
+<!-- <img src="{{i.image.url}}" width="250" height="200">
+{{i.name}}
+{{i.nickname}}
+{{i.roll}}
+{{i.address}}
+{{i.phone}}
+<hr> -->
+
+    <tbody class="">
+        <tr style="background-color: rgba(0, 200, 255, 0.492);">
+            <td >
+                <div class="d-flex align-items-center">
+                    <a href="{{i.image.url}}"><img src="{{i.image.url}}" width="120" height="110" class="flip-diagonal-2-tl"></a></div>
+            </td>
+            <td>{{i.name}}</td>
+            <td>{{i.nickname}}</td>
+            <td>{{i.roll}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.phone}}</td>
+        </tr>
+    </tbody>
+
+{% endfor %}
+</div>
+
+{% endblock %}
